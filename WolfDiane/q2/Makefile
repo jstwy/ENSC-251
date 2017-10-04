@@ -7,14 +7,14 @@ CC = g++
 #  -Wall turns on most, but not all, compiler warnings
 CFLAGS  = -g -Wall
 
-# the build target executable:
-TARGET = q2
+# typing 'make' in terminal builds the following files
+q2: q2.o VectorDouble.o
+	$(CC) q2.o VectorDouble.o -o q2 -g
+q2.o: q2.cpp VectorDouble.h
+	$(CC) q2.cpp -c -g
+VectorDouble.o: VectorDouble.cpp VectorDouble.h
+	$(CC) VectorDouble.cpp -c -g
 
-all: $(TARGET)
-
-$(TARGET): $(TARGET).cpp
-	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp
-
+# typing 'make clean' in terminal removes all object files previously created
 clean:
-	$(RM) $(TARGET) 
- 
+	$(RM) *.o *~ q2
