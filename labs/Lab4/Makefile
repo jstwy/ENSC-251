@@ -8,7 +8,7 @@ CC = g++
 CFLAGS  = -g -Wall
 
 # the build target executable:
-TARGET = quick_sort
+TARGET = test
 
 all: $(TARGET)
 
