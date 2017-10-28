@@ -32,7 +32,7 @@ typedef Node* NodePtr;
 
 void printList(NodePtr listHead);
 // Precondition: The linked list is not empty.
-// Postcondition: The name stored in each node is printed to the consold in
+// Postcondition: The name stored in each node is printed to the console in
 //                the order that they appear in the list.
 void insertNode(NodePtr nodeToInsertAfter, string nameToInsert);
 // Precondition: The linked list is not empty.

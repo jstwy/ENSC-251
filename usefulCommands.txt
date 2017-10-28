@@ -1,0 +1,6 @@
+Copying a file: cp [filename] [destination]
+Deleting a file: rm [filename]
+Moving a file: mv [filename] [destination]
+Renaming a file: mv [filename] [new filename]
+Creating a file: touch [filename]
+Creating and editing a file in the terminal: cat > [filename]
