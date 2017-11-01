@@ -9,15 +9,15 @@ CFLAGS  = -g -std=c++11 -Wall
 
 # VERY GENERAL COMMANDS (uncomment lines 12-20) ------------------------------
 # the build target executable:
-#TARGET = FILE #change this to name of main file
+TARGET = lab5
 
-#all: $(TARGET)
+all: $(TARGET)
 
-#$(TARGET): $(TARGET).cpp
-#	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp
+$(TARGET): $(TARGET).cpp
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp
 
-#clean:
-#	$(RM) $(TARGET) 
+clean:
+	$(RM) $(TARGET)  
  
 # COMMANDS FOR SEPARATE FILES (uncomment lines 24-29, 32-33) -----------------
 # typing 'make' in terminal builds the following files:
