@@ -1,33 +1,18 @@
-# See example: https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html
-# the compiler: gcc for C program, define as g++ for C++
+# g++ compiler
 CC = g++
 
-# compiler flags:
-#  -g    adds debugging information to the executable file
-#  -Wall turns on most, but not all, compiler warnings
-CFLAGS  = -g -Wall
+# use c++11
+CFLAGS  = -std=c++11
 
-# very general commands ------------------------------------------------------
-# the build target executable:
-TARGET = FILE
-
-all: $(TARGET)
-
-$(TARGET): $(TARGET).cpp
-	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp
-
-clean:
-	$(RM) $(TARGET) 
- 
-# more specific commands -----------------------------------------------------
-# typing 'make' in terminal builds the following files
-#MAIN: MAIN.o CLASS.o
-#	$(CC) MAIN.o CLASS.o -o MAIN -g
-#MAIN.o: MAIN.cpp CLASS.h
-#	$(CC) MAIN.cpp -c -g
-#CLASS.o: CLASS.cpp CLASS.h
-#	$(CC) CLASS.cpp -c -g
+lab: lab5.o lab5utils.o TimeFormatMistake.o
+	$(CC) $(CFLAGS) -o lab lab5.o lab5utils.o TimeFormatMistake.o
+lab5.o: lab5.cpp lab5utils.h TimeFormatMistake.h
+	$(CC) $(CFLAGS) -c lab5.cpp
+lab5utils.o: lab5utils.cpp lab5utils.h TimeFormatMistake.h
+	$(CC) $(CFLAGS) -c lab5utils.cpp
+TimeFormatMistake.o: TimeFormatMistake.cpp TimeFormatMistake.h
+	$(CC) $(CFLAGS) -c TimeFormatMistake.cpp
 
 # typing 'make clean' in terminal removes all object files previously created
-#clean:
-#	$(RM) *.o *~ MAIN
+clean:
+	$(RM) *.o *~ lab
